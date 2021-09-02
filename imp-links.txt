@@ -3,3 +3,10 @@ Lecture-1:
 Lecture-2:
     Create react app using create-react-app
         https://reactjs.org/docs/create-a-new-react-app.html
+
+Lecture-4:
+    Official documentation of react:
+        https://reactjs.org/docs/getting-started.html
+
+    Understanding JSX:
+        https://reactjs.org/docs/introducing-jsx.html
