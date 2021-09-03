@@ -38,3 +38,7 @@ Lecture-7:
 Lecture-7:
     Use State / State Hook:
         https://reactjs.org/docs/hooks-overview.html
+
+Lecture-10:
+    Bootstrap component ==> Accordian:
+        https://getbootstrap.com/docs/5.1/components/accordion/

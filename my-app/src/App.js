@@ -7,6 +7,9 @@ import Navbar from './components/Navbar';
 // import the Textform component to this App.js file
 import TextForm from './components/Textform';
 
+// import the About component to this App.js file
+import About from './components/About';
+
 
 /* 
   Yeh joh html lika hua hai inside the return (); of App.js, yeh actually mein JSX hai.
@@ -40,6 +43,10 @@ function App() {
           <TextForm heading="Enter the text to analyse" />
 
         </div>
+
+       {/* About Component of our react application */}
+       {/* Using About component in our react app */}
+       <About/>
         
 
       

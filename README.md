@@ -18,4 +18,8 @@ Source Code Links:
 
 8. https://www.codewithharry.com/videos/react-tutorials-in-hindi-8
 
+9. Exercise-1
+
+10. https://www.codewithharry.com/videos/react-tutorials-in-hindi-10
+
 
