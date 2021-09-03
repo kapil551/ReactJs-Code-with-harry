@@ -38,10 +38,34 @@ import React, { useState } from 'react'
 export default function Textform(props) {
 
 
+    // handler function to convert the text of the textbox to upper case
+    const upperCaseHandler = () => {
+
+        console.log("Button is Clicked");
+        console.log("text is: " + text);
+
+        // changing the value of the state variable, which we call "text" to upperCase
+        const upperCaseText = text.toUpperCase();
+        
+        setText(upperCaseText); // update the value of state variable named "text"
+    }
+
+    // handler function to show the converted text in the textarea ==> so that we are able to add more text to your textbox.
+    const showChangedText = (event) => {
+
+        // console.log("Text of TextArea is Changed");
+        // console.log(event.target);
+        
+        setText(event.target.value);
+
+    }
+
+
     //Step-2: To use state, firstly enter the following code inside your function-based component.
     
-    // Declare a new state variable, which we'll call "text"
-    const [text, setText] = useState("Enter Text Here!");
+    // Declare a new state variable, which we'll call "text",
+    // And initially the value of text is "Enter Text Here!"
+    const [text, setText] = useState("enter text here!");
 
 
 
@@ -54,12 +78,18 @@ export default function Textform(props) {
             {/* https://getbootstrap.com/docs/5.1/forms/form-control/ */}
             <div className="mb-3">
                 {/* Textbox for our app */}
-                <textarea className="form-control" value={text} id="myBox" rows="8"></textarea>
+                {/* assign a function to the "Onchange" event of the textarea , so that we can show the change in the 
+                    text of the textarea i.e. adding more text or deleting some text etc.*/}
+                <textarea className="form-control" value={text} onChange={showChangedText} id="myBox" rows="8"></textarea>
             </div>
 
             {/* Adding Button */}
             {/* https://getbootstrap.com/docs/5.1/components/buttons/ */}
-            <button className="btn btn-primary"> Convert to UpperCase</button>
+
+            {/* Now let’s make our button functional by assigning a function to it. 
+                We are creating a function named UpperCaseHandler, which will be invoked when the button is clicked
+                and this onClickHandler will change the text of the textbox to upperCase  */}
+            <button className="btn btn-primary" onClick={upperCaseHandler}> Convert to UpperCase</button>
 
 
         </div>
