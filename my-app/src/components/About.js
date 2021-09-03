@@ -2,20 +2,90 @@
 
 // We are creating a custom function based component of react
 
-import React from 'react'
+import React, {useState} from 'react'
 
 export default function About() {
 
-    // Enble dark mode in about component
-    let myStyle = {
-        color: "white",
+    // // Enble dark mode in about component
+    // let myStyle = {
+    //     color: "white",
+    //     backgroundColor: "black",
+    // }
+
+    // let btnStyle = {
+    //     backgroundColor: "white",
+    //     color: "black"
+    // }
+
+    // Declare a new state variable, which we'll call "myStyle",
+    // And initially the value of myStyle is per light mode
+    const [myStyle, setMyStyle] = useState({
+
+        color: "black",
+        backgroundColor: "white"
+    });
+
+    // Declare another new state variable, which we'll call "btnStyle",
+    // And initially the value of btnStyle is per light mode
+    const [btnStyle, setBtnStyle] = useState({
         backgroundColor: "black",
+        color: "white"
+    });
+
+    // Declare another new state variable, which we'll call "btnText",
+    // And initially the value of btnText is "Enable Dark Mode"
+    const [btnText, setBtnText] = useState("Enable Dark Mode");
+
+
+    // handler function to toggle b/w light and dark mode on button click
+    const toggleLightAndDarkModeHandler = () => {
+
+        console.log("Btn is clicked");
+
+        if( myStyle.backgroundColor === "white" && btnStyle.backgroundColor === "black") {
+
+            // enable dark mode
+
+            // update the value of myStyle
+            setMyStyle({
+                backgroundColor: "black",
+                color: "white"
+            });
+
+            // update the value of btnStyle
+            setBtnStyle({
+                backgroundColor: "white",
+                color: "black"
+            })
+
+            // update the value of btnText
+            setBtnText("Enable Light Mode ");
+
+        } 
+        
+        else {
+
+             // enable light mode
+
+            // update the value of myStyle
+             setMyStyle({
+                backgroundColor: "white",
+                color: "black"
+            });
+
+            // update the value of btnStyle
+            setBtnStyle({
+                backgroundColor: "black",
+                color: "white"
+            })
+
+             // update the value of btnText
+            setBtnText("Enable Dark Mode");
+
+        }
     }
 
-    let btnStyle = {
-        backgroundColor: "white",
-        color: "black"
-    }
+    
 
     return (
         <div className="container" style={myStyle}>
@@ -61,7 +131,8 @@ export default function About() {
                 </div>
             </div>
 
-            <button type="button" className="btn my-2" style={btnStyle}>Enable Dark Mode In About Section</button>
+            {/* Now I want to toggle b/w the dark mode and light mode in the about component by clicking on the button */}
+            <button type="button" className="btn my-2" onClick={toggleLightAndDarkModeHandler} style={btnStyle}> {btnText} </button>
         </div>
     )
 }
