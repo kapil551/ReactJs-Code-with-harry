@@ -76,11 +76,32 @@ export default function Textform(props) {
 
     }
 
+
+    // handler function to trim all the spaces in the "text"
+    const trimSpacesHandler = () => {
+
+        // console.log("Trim spaces button clicked");
+
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replaceAll
+        const textAfterTrimming = text.replaceAll(" ", "");
+        
+        // console.log(textAfterTrimming);
+
+        // update the value of the state variable "trimmedText" in the views with textAfterTrimming
+        setTrimText(textAfterTrimming);
+
+
+    }
+
     //Step-2: To use state, firstly enter the following code inside your function-based component.
     
     // Declare a new state variable, which we'll call "text",
     // And initially the value of text is "Enter Text Here!"
     const [text, setText] = useState("enter text here!");
+
+    // Declare a new state variable, which we'll call "trimmedText",
+    // And initially the value of text is ""
+    let [trimmedText, setTrimText] = useState("");
 
     const countWords = text.split(" ").length;
     const countCharacters = text.length;
@@ -115,6 +136,10 @@ export default function Textform(props) {
             {/* Let’s create a convert to Lowercase Button for our app and assign a function to it. 
                 So that it can convert text to Lowercase. */}
             <button className="btn btn-primary mx-2" onClick={lowerCaseHandler}> Convert to LowerCase</button>
+
+            {/* Let's create a trim all space Button for our app and also assign a fucntion to it.*/}
+            <button type="button" className="btn btn-secondary" onClick={trimSpacesHandler} >Trim spaces</button>
+
             
 
 
@@ -130,6 +155,10 @@ export default function Textform(props) {
             {/* Preview Section of Text */}
             <h2>Preview</h2>
             <p>{text}</p>
+
+            {/* Trimmed Text */}
+            <h2>Trimmed text</h2>
+            <p> {trimmedText}</p>
 
         </div>
 
