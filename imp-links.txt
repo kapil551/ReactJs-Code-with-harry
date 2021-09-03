@@ -14,3 +14,11 @@ Lecture-4:
 Lecture-5:
     Bootstrap:
        https://getbootstrap.com/docs/5.1/getting-started/introduction/
+
+Lecture-6:
+    Components and Props:
+        https://reactjs.org/docs/components-and-props.html
+
+Lecture-6:
+    Typechecking with PropTypes:
+        https://reactjs.org/docs/typechecking-with-proptypes.html

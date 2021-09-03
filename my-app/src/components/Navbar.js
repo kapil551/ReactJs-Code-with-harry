@@ -4,6 +4,13 @@
 
 import React from "react"
 
+// Prop-type:
+// https://reactjs.org/docs/typechecking-with-proptypes.html
+
+// Firstly, we need to import prop types
+import PropTypes from 'prop-types'
+
+
 /*
     Changing Values Using Props:
         
@@ -51,6 +58,20 @@ export default function Navbar(props) {
         </div>
     )
 }
+
+// Setting Up the prop-types:
+Navbar.propTypes = {title: PropTypes.string.isRequired, aboutText: PropTypes.string}; 
+/*
+    It means that my prop-type of title is a string which means on passing any other value, like Number, it will show an error in the console.
+    Hence we can only pass a string in props.title and props.aboutText. 
+    
+    We can use "isRequired" keyword, which makes sure that we won’t leave that prop blank. 
+    If you do so, it will show an error in the console. 
+    
+    Similarly, You can use an object, Number, etc. as prop-type as well.
+*/
+
+
 
 // What is the next step?
 // ANS: Now we have created our navbar, but we have to import it to App.js(the file inside the src folder) to serve it.
