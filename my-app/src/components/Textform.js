@@ -93,6 +93,23 @@ export default function Textform(props) {
 
     }
 
+    // handler function to copy text of the textform
+    const handleCopy = () => {
+
+        let copyText = document.getElementById("myBox");
+        copyText.select();
+
+        navigator.clipboard.writeText(copyText.value)
+    }
+
+    // handler function to remove extra spaces in the text
+    const removeExtraSpaceHandler = () => {
+
+        let extraSpacesRemovedText = text.split(/[ ]+/);
+
+        setText(extraSpacesRemovedText.join(" "));
+    }
+
     //Step-2: To use state, firstly enter the following code inside your function-based component.
     
     // Declare a new state variable, which we'll call "text",
@@ -139,6 +156,14 @@ export default function Textform(props) {
 
             {/* Let's create a trim all space Button for our app and also assign a fucntion to it.*/}
             <button type="button" className="btn btn-secondary" onClick={trimSpacesHandler} >Trim spaces</button>
+
+            {/* Copy Text Button */}
+            <button type="button" className="btn btn-secondary mx-2" onClick={handleCopy}>Copy Text</button>
+
+            {/* {Remove Extra Spaces button} */}
+            <button type="button" className="btn btn-secondary mx-2" onClick={removeExtraSpaceHandler}>Remove Extra Spaces</button>
+            
+
 
             
 

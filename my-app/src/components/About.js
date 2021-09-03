@@ -49,7 +49,8 @@ export default function About() {
             // update the value of myStyle
             setMyStyle({
                 backgroundColor: "black",
-                color: "white"
+                color: "white",
+                border: "1px solid white"
             });
 
             // update the value of btnStyle
