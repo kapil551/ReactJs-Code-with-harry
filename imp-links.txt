@@ -30,3 +30,11 @@ Lecture-7:
 Lecture-7: 
     Button components from Bootstrap:
         https://getbootstrap.com/docs/5.1/components/buttons/
+
+Lecture-7:
+    Hooks in react:
+        https://reactjs.org/docs/hooks-intro.html
+
+Lecture-7:
+    Use State / State Hook:
+        https://reactjs.org/docs/hooks-overview.html
