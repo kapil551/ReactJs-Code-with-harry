@@ -41,13 +41,13 @@ export default function Textform(props) {
     // handler function to convert the text of the textbox to upper case
     const upperCaseHandler = () => {
 
-        console.log("Button is Clicked");
-        console.log("text is: " + text);
+        // console.log("Button is Clicked");
+        // console.log("text is: " + text);
 
         // changing the value of the state variable, which we call "text" to upperCase
         const upperCaseText = text.toUpperCase();
         
-        setText(upperCaseText); // update the value of state variable named "text"
+        setText(upperCaseText); // update the value of state variable named "text" in the views
     }
 
     // handler function to show the converted text in the textarea ==> so that we are able to add more text to your textbox.
@@ -60,6 +60,21 @@ export default function Textform(props) {
 
     }
 
+    // handler function to convert the text of the textbox to lower case
+    const lowerCaseHandler = () => {
+
+        // console.log("LowerCase button clicked");
+
+        // changing the value of the state variable, which we call "text" to lowerCase
+
+        const lowerCaseText = text.toLowerCase();
+
+        // update the value of the state variable name "text" in the views
+        setText(lowerCaseText);
+
+
+
+    }
 
     //Step-2: To use state, firstly enter the following code inside your function-based component.
     
@@ -67,10 +82,16 @@ export default function Textform(props) {
     // And initially the value of text is "Enter Text Here!"
     const [text, setText] = useState("enter text here!");
 
+    const countWords = text.split(" ").length;
+    const countCharacters = text.length;
+
+    const timeToReadOneWord = 0.008;
+    const minutesRead = timeToReadOneWord * countWords;
 
 
     return (
-        <div>
+        <>
+        <div className="container">
             {/* Heading */}
             <h1> {props.heading} </h1>
 
@@ -91,8 +112,29 @@ export default function Textform(props) {
                 and this onClickHandler will change the text of the textbox to upperCase  */}
             <button className="btn btn-primary" onClick={upperCaseHandler}> Convert to UpperCase</button>
 
+            {/* Let’s create a convert to Lowercase Button for our app and assign a function to it. 
+                So that it can convert text to Lowercase. */}
+            <button className="btn btn-primary mx-2" onClick={lowerCaseHandler}> Convert to LowerCase</button>
+            
+
 
         </div>
+
+        {/* Counting Words and Character */}
+        <div className="container my-3">
+
+            <h1> Your text summary</h1>
+            <p> {countWords} words and {countCharacters} characters </p>
+            <p> {minutesRead} Minutes read </p>
+
+            {/* Preview Section of Text */}
+            <h2>Preview</h2>
+            <p>{text}</p>
+
+        </div>
+
+        
+        </>
     )
 }
 
