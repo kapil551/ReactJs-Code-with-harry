@@ -71,6 +71,15 @@ Navbar.propTypes = {title: PropTypes.string.isRequired, aboutText: PropTypes.str
     Similarly, You can use an object, Number, etc. as prop-type as well.
 */
 
+// Setting Up the default prop-type:
+/*
+    If no props are being passed in the component, then the Default content in this prop-type will be displayed.
+ */
+Navbar.defaultProps = {
+    title: "Set title here",
+    aboutText: "About text here"
+}
+
 
 
 // What is the next step?
