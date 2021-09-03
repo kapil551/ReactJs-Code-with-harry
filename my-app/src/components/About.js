@@ -5,16 +5,27 @@
 import React from 'react'
 
 export default function About() {
-    
+
+    // Enble dark mode in about component
+    let myStyle = {
+        color: "white",
+        backgroundColor: "black",
+    }
+
+    let btnStyle = {
+        backgroundColor: "white",
+        color: "black"
+    }
+
     return (
-        <div className="container">
+        <div className="container" style={myStyle}>
 
             <h3>About Us</h3>
             
             <div className="accordion" id="accordionExample">
-                <div className="accordion-item">
+                <div className="accordion-item" style={myStyle}>
                     <h2 className="accordion-header" id="headingOne">
-                    <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"> 
+                    <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style={myStyle}> 
                         Accordion Item #1
                     </button>
                     </h2>
@@ -24,9 +35,9 @@ export default function About() {
                     </div>
                     </div>
                 </div>
-                <div className="accordion-item">
+                <div className="accordion-item" style={myStyle}>
                     <h2 className="accordion-header" id="headingTwo">
-                    <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" style={myStyle}>
                         Accordion Item #2
                     </button>
                     </h2>
@@ -36,9 +47,9 @@ export default function About() {
                     </div>
                     </div>
                 </div>
-                <div className="accordion-item">
+                <div className="accordion-item" style={myStyle}>
                     <h2 className="accordion-header" id="headingThree">
-                    <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" style={myStyle}>
                         Accordion Item #3
                     </button>
                     </h2>
@@ -50,7 +61,7 @@ export default function About() {
                 </div>
             </div>
 
-            <button type="button" className="btn btn-dark my-2">Enable Dark Mode In About Section</button>
+            <button type="button" className="btn my-2" style={btnStyle}>Enable Dark Mode In About Section</button>
         </div>
     )
 }
