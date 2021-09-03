@@ -22,3 +22,11 @@ Lecture-6:
 Lecture-6:
     Typechecking with PropTypes:
         https://reactjs.org/docs/typechecking-with-proptypes.html
+
+Lecture-7:
+    Textarea components from Bootstrap:
+        https://getbootstrap.com/docs/5.1/forms/form-control/
+
+Lecture-7: 
+    Button components from Bootstrap:
+        https://getbootstrap.com/docs/5.1/components/buttons/
