@@ -21,7 +21,9 @@ function App() {
         
         {/* Serve/Use the custom NavBar Component here */}
         {/* We will use the Navbar component by writing <Navbar/> inside return(). */}
-        <Navbar/> 
+        
+        {/* passing the values in the created props ==> I created two props for my Navbar component (title and aboutText)*/}
+        <Navbar title="Textutils" aboutText="About Textutils"/> 
 
       
     </div>

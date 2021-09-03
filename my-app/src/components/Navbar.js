@@ -4,7 +4,14 @@
 
 import React from "react"
 
-export default function Navbar() {
+/*
+    Changing Values Using Props:
+        
+        Now let’s Suppose you want to use the above navbar in your different applications but with different titles and About, 
+        or pass New values to your existing Navbar. You can do so by using Props in React.
+*/
+                            // using props
+export default function Navbar(props) {
 
     return (
         <div>
@@ -14,7 +21,9 @@ export default function Navbar() {
             {/* Added Bootstrap Component ==> Navbar */}
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
                 <div className="container-fluid">
-                <a className="navbar-brand" href="/">TextUtils</a>
+                    {/* Created props.title */}
+                    {/* We will be passing values in these props from App.js file */}
+                    <a className="navbar-brand" href="/"> {props.title} </a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
@@ -25,7 +34,9 @@ export default function Navbar() {
                         <a className="nav-link active" aria-current="page" href="/">Home</a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="/">About</a>
+                        {/* Create props.aboutText */}
+                        {/* We will be passing values in these props from App.js file */}
+                        <a className="nav-link" href="/"> {props.aboutText} </a>
                     </li>
 
                     </ul>
