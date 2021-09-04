@@ -1,4 +1,5 @@
 
+import React, { useState } from 'react';
 import './App.css';
 
 // import the Navbar component to this App.js file 
@@ -18,6 +19,34 @@ import About from './components/About';
 */
 
 function App() {
+
+  // function to toggle b/w light and dark mode ==> By updating the value of state variable named "Mode"
+  const toggleLightDarkModeHandler = () => {
+
+    // console.log("Switch is clicked");
+
+    // enable dark mode
+    if(Mode === "light") {
+
+      setMode("dark");
+    }
+
+    // enable light mode
+    else {
+
+      setMode("light");
+    }
+
+  }
+
+
+  // Now I am going to learn how to manage the state of our complete react application from App.js
+  // For Example ==> Applying dark mode to our complete react application.
+
+  // In our app.js we will create a new state variable named "Mode"
+  // The initial value of this state variable named "Mode" is light
+  const [Mode, setMode] = useState("light");
+
   return (
     
     // Yeh sara joh html hai inside the return voh JSX hai.
@@ -29,7 +58,9 @@ function App() {
         {/* We will use the Navbar component by writing <Navbar/> inside return(). */}
         
         {/* passing the values in the created props ==> I created two props for my Navbar component (title and aboutText)*/}
-        <Navbar title="Textutils" aboutText="About Textutils"/> 
+        {/* Now I will also pass this state variable named "Mode" to our NavBar component using props, I added a new props name mode with value as state variable */}
+        {/* Also I will pass the toggleLightDarkModeHandler to the NavBar component using props*/}
+        <Navbar title="Textutils" aboutText="About Textutils" mode={Mode} toggleLightDarkMode={toggleLightDarkModeHandler}/> 
 
       
       {/* TextForm Component of our react application */}

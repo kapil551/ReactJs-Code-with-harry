@@ -22,4 +22,8 @@ Source Code Links:
 
 10. https://www.codewithharry.com/videos/react-tutorials-in-hindi-10
 
+11. https://www.codewithharry.com/videos/react-tutorials-in-hindi-11
+
+12. https://www.codewithharry.com/videos/react-tutorials-in-hindi-12
+
 

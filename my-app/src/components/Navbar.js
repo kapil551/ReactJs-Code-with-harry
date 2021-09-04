@@ -26,7 +26,18 @@ export default function Navbar(props) {
             {/* Here will be the code of Navbar component */}
             
             {/* Added Bootstrap Component ==> Navbar */}
-            <nav className="navbar navbar-expand-lg navbar-light bg-light">
+            
+            {/* 
+                For Dark Mode:
+                <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+
+                For Light Mode:
+                <nav className="navbar navbar-expand-lg navbar-light bg-light">
+
+             */}
+
+            {/* I will toggle b/w light and dark mode using the string literals in javaScript.*/}
+            <nav className= {`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
                 <div className="container-fluid">
                     {/* Created props.title */}
                     {/* We will be passing values in these props from App.js file */}
@@ -52,6 +63,17 @@ export default function Navbar(props) {
                     <button className="btn btn-outline-success" type="submit">Search</button>
                     </form>
                 </div>
+                </div>
+
+                {/* Now How do we toggle b/w light and dark mode*/}
+                {/* We don’t want to change the value in our useState in App.js again and again. 
+                    Instead, we would use a switch to interchange dark and light mode. */}
+                
+                {/* BootStrap Component ==> checks-radio */}
+                {/* https://getbootstrap.com/docs/5.1/forms/checks-radios/ */}
+                <div class={`form-check form-switch text-${props.mode === "light" ? "dark" : "light"}`}>
+                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" onClick={props.toggleLightDarkMode}/>
+                    <label class="form-check-label" for="flexSwitchCheckDefault"> enable {props.mode === "light" ? "dark" : "light"} mode </label>
                 </div>
             </nav>
 

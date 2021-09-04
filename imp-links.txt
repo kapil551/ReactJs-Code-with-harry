@@ -42,3 +42,7 @@ Lecture-7:
 Lecture-10:
     Bootstrap component ==> Accordian:
         https://getbootstrap.com/docs/5.1/components/accordion/
+
+Lecture-12:
+    Bootstrap component ==> Check-radios:
+        https://getbootstrap.com/docs/5.1/forms/checks-radios/
