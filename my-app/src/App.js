@@ -29,12 +29,18 @@ function App() {
     if(Mode === "light") {
 
       setMode("dark");
+
+      //Also, Enable dark mode for the body of the react application
+      document.body.style.backgroundColor = "#9CA3AF";
     }
 
     // enable light mode
     else {
 
       setMode("light");
+
+      //Also, Enable light mode for the body of the react application
+      document.body.style.backgroundColor = "white";
     }
 
   }
@@ -60,7 +66,7 @@ function App() {
         {/* passing the values in the created props ==> I created two props for my Navbar component (title and aboutText)*/}
         {/* Now I will also pass this state variable named "Mode" to our NavBar component using props, I added a new props name mode with value as state variable */}
         {/* Also I will pass the toggleLightDarkModeHandler to the NavBar component using props*/}
-        <Navbar title="Textutils" aboutText="About Textutils" mode={Mode} toggleLightDarkMode={toggleLightDarkModeHandler}/> 
+        <Navbar title="Textutils" aboutText="About Textutils" mode={Mode} toggleLightDarkMode={toggleLightDarkModeHandler} /> 
 
       
       {/* TextForm Component of our react application */}
