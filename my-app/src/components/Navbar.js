@@ -71,9 +71,9 @@ export default function Navbar(props) {
                 
                 {/* BootStrap Component ==> checks-radio */}
                 {/* https://getbootstrap.com/docs/5.1/forms/checks-radios/ */}
-                <div class={`form-check form-switch text-${props.mode === "light" ? "dark" : "light"}`}>
-                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" onClick={props.toggleLightDarkMode}/>
-                    <label class="form-check-label" for="flexSwitchCheckDefault"> enable {props.mode === "light" ? "dark" : "light"} mode </label>
+                <div className={`form-check form-switch text-${props.mode === "light" ? "dark" : "light"}`}>
+                    <input className="form-check-input" type="checkbox" id="flexSwitchCheckDefault" onClick={props.toggleLightDarkMode}/>
+                    <label className="form-check-label" for="flexSwitchCheckDefault"> enable {props.mode === "light" ? "dark" : "light"} mode </label>
                 </div>
             </nav>
 
