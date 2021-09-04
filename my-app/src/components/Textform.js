@@ -113,8 +113,8 @@ export default function Textform(props) {
     //Step-2: To use state, firstly enter the following code inside your function-based component.
     
     // Declare a new state variable, which we'll call "text",
-    // And initially the value of text is "Enter Text Here!"
-    const [text, setText] = useState("enter text here!");
+    // And initially the value of text is ""
+    const [text, setText] = useState("");
 
     // Declare a new state variable, which we'll call "trimmedText",
     // And initially the value of text is ""
@@ -129,7 +129,7 @@ export default function Textform(props) {
 
     return (
         <>
-        <div className="container">
+        <div className="container" style={{color: props.mode === "light" ? "black" : "white"}}>
             {/* Heading */}
             <h1> {props.heading} </h1>
 
@@ -139,7 +139,7 @@ export default function Textform(props) {
                 {/* Textbox for our app */}
                 {/* assign a function to the "Onchange" event of the textarea , so that we can show the change in the 
                     text of the textarea i.e. adding more text or deleting some text etc.*/}
-                <textarea className="form-control" value={text} onChange={showChangedText} id="myBox" rows="8"></textarea>
+                <textarea className="form-control" value={text} onChange={showChangedText} id="myBox" rows="8" style={{backgroundColor: props.mode === "light" ? "#F3F4F6" : "white"}} ></textarea>
             </div>
 
             {/* Adding Button */}
@@ -171,7 +171,7 @@ export default function Textform(props) {
         </div>
 
         {/* Counting Words and Character */}
-        <div className="container my-3">
+        <div className="container my-3" style={{color: props.mode === "light" ? "black" : "white"}}>
 
             <h1> Your text summary</h1>
             <p> {countWords} words and {countCharacters} characters </p>
@@ -179,7 +179,7 @@ export default function Textform(props) {
 
             {/* Preview Section of Text */}
             <h2>Preview</h2>
-            <p>{text}</p>
+            <p>{text.length > 0 ? text : "Enter some text in the textform to preview it here."}</p>
 
             {/* Trimmed Text */}
             <h2>Trimmed text</h2>

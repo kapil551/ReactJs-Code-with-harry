@@ -77,7 +77,8 @@ function App() {
           {/* We will use the TextForm component by writing <TextForm/> inside return(). */}
           
           {/* passing the values in the created props ==> I created one prop in my TextForm component (heading)*/}
-          <TextForm heading="Enter the text to analyse" />
+          {/* Now I will also pass this state variable named "Mode" to our TextForm component using props, I added a new props name mode with value as state variable */}
+          <TextForm heading="Enter the text to analyse" mode={Mode} />
 
         </div>
 
