@@ -113,7 +113,9 @@ function App() {
           
           {/* passing the values in the created props ==> I created one prop in my TextForm component (heading)*/}
           {/* Now I will also pass this state variable named "Mode" to our TextForm component using props, I added a new props name mode with value as state variable */}
-          <TextForm heading="Enter the text to analyse" mode={Mode} />
+
+          {/* Show Alert message while using the features uisng props */}
+          <TextForm heading="Enter the text to analyse" mode={Mode} showAlert={showAlert} />
 
         </div>
 

@@ -48,6 +48,9 @@ export default function Textform(props) {
         const upperCaseText = text.toUpperCase();
         
         setText(upperCaseText); // update the value of state variable named "text" in the views
+
+        // Show Alert message while using the features
+        props.showAlert("Converted to uppercase!", "success");
     }
 
     // handler function to show the converted text in the textarea ==> so that we are able to add more text to your textbox.
@@ -72,7 +75,8 @@ export default function Textform(props) {
         // update the value of the state variable name "text" in the views
         setText(lowerCaseText);
 
-
+        // Show Alert message while using the features
+        props.showAlert("Converted to lowercase!", "success");
 
     }
 
@@ -90,6 +94,8 @@ export default function Textform(props) {
         // update the value of the state variable "trimmedText" in the views with textAfterTrimming
         setTrimText(textAfterTrimming);
 
+        // Show Alert message while using the features
+        props.showAlert("Trimmed all spaces!", "success");
 
     }
 
@@ -100,6 +106,9 @@ export default function Textform(props) {
         copyText.select();
 
         navigator.clipboard.writeText(copyText.value)
+
+        // Show Alert message while using the features
+        props.showAlert("Copied to clipboard!", "success");
     }
 
     // handler function to remove extra spaces in the text
@@ -108,6 +117,9 @@ export default function Textform(props) {
         let extraSpacesRemovedText = text.split(/[ ]+/);
 
         setText(extraSpacesRemovedText.join(" "));
+
+        // Show Alert message while using the features
+        props.showAlert("Removed extra spaces!", "success");
     }
 
     //Step-2: To use state, firstly enter the following code inside your function-based component.
