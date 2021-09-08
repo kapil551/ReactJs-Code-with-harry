@@ -132,7 +132,26 @@ export default function Textform(props) {
     // And initially the value of text is ""
     let [trimmedText, setTrimText] = useState("");
 
-    const countWords = text.split(" ").length;
+    /*
+    Fixing Word Count Error:
+        We have created the function of Counting words in our Textform.js. 
+        The split() method is used to convert the string into an array. 
+        In our case, We are splitting the string by a space and then counting the length of that array, which comes out to be one. 
+        Therefore, a blank space is being counted as a word.
+
+    Solution: 
+        The quick way of fixing this error is by removing the empty strings from the split array. 
+        We can easily do so by using the filter method in our Text.split function as described below:
+    */
+    const countWords = text.split(" ").filter((element) => {
+
+        return element.length !== 0; // returne true only if the element has length greater than zero
+    }).length;
+    /*
+    If the arrow function returns the true value for an element, then only it would be allowed to stay in the split array. 
+    The filter() does not execute the function for empty array elements.
+    */
+
     const countCharacters = text.length;
 
     const timeToReadOneWord = 0.008;

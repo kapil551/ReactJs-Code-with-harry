@@ -34,4 +34,8 @@ Source Code Links:
 
 16. https://www.codewithharry.com/videos/react-tutorials-in-hindi-16
 
+17. https://www.codewithharry.com/videos/react-tutorials-in-hindi-17 (Not Important)
+
+18. https://www.codewithharry.com/videos/react-tutorials-in-hindi-18 (Paid Deployment ==> Purchasing a Domain)
+
 
