@@ -11,6 +11,9 @@ import TextForm from './components/Textform';
 // import the About component to this App.js file
 import About from './components/About';
 
+// import the Alert component to this App.js file
+import Alert from './components/Alert';
+
 
 /* 
   Yeh joh html lika hua hai inside the return (); of App.js, yeh actually mein JSX hai.
@@ -32,6 +35,9 @@ function App() {
 
       //Also, Enable dark mode for the body of the react application
       document.body.style.backgroundColor = "#9CA3AF";
+
+      // to show alert while changing modes
+      showAlert("Dark mode is enabled", "success");
     }
 
     // enable light mode
@@ -41,7 +47,22 @@ function App() {
 
       //Also, Enable light mode for the body of the react application
       document.body.style.backgroundColor = "white";
+
+      // to show alert while changing modes
+      showAlert("Light mode is enabled", "success");
     }
+
+  }
+
+  // showAlert handler function to display the alert
+  const showAlert = (message, type) => {
+
+    // update the value of set variable alert object
+    setalert({
+
+      msg: message,
+      type: type
+    });
 
   }
 
@@ -52,6 +73,10 @@ function App() {
   // In our app.js we will create a new state variable named "Mode"
   // The initial value of this state variable named "Mode" is light
   const [Mode, setMode] = useState("light");
+
+  // In our app.js we will create a new state variable named "alert"
+  // The initial value of this state variable named "alert" is null
+  const [alert, setalert] = useState(null);
 
   return (
     
@@ -66,7 +91,17 @@ function App() {
         {/* passing the values in the created props ==> I created two props for my Navbar component (title and aboutText)*/}
         {/* Now I will also pass this state variable named "Mode" to our NavBar component using props, I added a new props name mode with value as state variable */}
         {/* Also I will pass the toggleLightDarkModeHandler to the NavBar component using props*/}
-        <Navbar title="Textutils" aboutText="About Textutils" mode={Mode} toggleLightDarkMode={toggleLightDarkModeHandler} /> 
+        <Navbar title="Textutils" aboutText="About Textutils" mode={Mode} toggleLightDarkMode={toggleLightDarkModeHandler} />
+
+        {/* Alert component of our react application */}
+
+          {/* Serve/Use the custom Alert Component here */}
+          {/* We will use the Alert component by writing <Alert/> inside return(). */}
+          {/* passing the values in the created props ==> I created one props for my Alert component (alert)*/}
+          {/* The value of this alert props is the state variable named "alert" */}
+          <Alert alert={alert} />
+
+
 
       
       {/* TextForm Component of our react application */}

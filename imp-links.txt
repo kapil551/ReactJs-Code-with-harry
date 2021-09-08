@@ -46,3 +46,8 @@ Lecture-10:
 Lecture-12:
     Bootstrap component ==> Check-radios:
         https://getbootstrap.com/docs/5.1/forms/checks-radios/
+
+Lecture-13:
+    Bootstrap component ==> dismissing alerts
+        https://getbootstrap.com/docs/5.0/components/alerts/
+
