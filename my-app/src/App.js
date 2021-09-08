@@ -97,7 +97,7 @@ function App() {
   return (
 
     <>
-    
+
     {/*
     Using Router: 
       Now, we want to surround our entire application with the router component and what that means 
@@ -146,7 +146,10 @@ function App() {
                   So, we will create a route for each page, for which we will be using the route component(<route></route>). 
             */}
 
-            <Route path="/about">
+            {/* Remember you must use an "exact" parameter with the Route component as it disables the 
+                partial matching of the route and makes sure that it only returns the route if the path is exact. 
+            */}
+            <Route exact path="/about">
 
                {/* About Component of our react application */}
                 {/* Using About component in our react app */}
@@ -154,7 +157,10 @@ function App() {
 
             </Route>
 
-            <Route path="/">
+            {/* Remember you must use an "exact" parameter with the Route component as it disables the 
+                partial matching of the route and makes sure that it only returns the route if the path is exact. 
+            */}
+            <Route exact path="/">
 
               {/* TextForm Component of our react application */}
                 {/* Serve/Use the custom TextForm Component here */}
