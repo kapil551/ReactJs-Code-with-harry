@@ -51,3 +51,11 @@ Lecture-13:
     Bootstrap component ==> dismissing alerts
         https://getbootstrap.com/docs/5.0/components/alerts/
 
+Lecture-15:
+    Favicons generator:
+        https://favicon.io/favicon-converter/
+
+Lecture-16:
+    react-router-dom:
+        https://reactrouter.com/web/guides/quick-start
+

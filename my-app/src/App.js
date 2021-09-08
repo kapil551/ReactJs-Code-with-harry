@@ -14,6 +14,14 @@ import About from './components/About';
 // import the Alert component to this App.js file
 import Alert from './components/Alert';
 
+// import the Browser Router as Router, Switch, Route, and Link from react-router-dom. 
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+
 
 /* 
   Yeh joh html lika hua hai inside the return (); of App.js, yeh actually mein JSX hai.
@@ -87,10 +95,23 @@ function App() {
   const [alert, setalert] = useState(null);
 
   return (
-    
-    // Yeh sara joh html hai inside the return voh JSX hai.
-    <div className="App">
 
+    <>
+    
+    {/*
+    Using Router: 
+      Now, we want to surround our entire application with the router component and what that means 
+      is we can use the router in the entire application. As a result, all components that are nested 
+      inside this app component(app.js) get access to the router. 
+    */}
+
+    <Router>
+      
+      {/* Yeh sara joh html hai inside the return voh JSX hai. */}
+      
+            {/* Note: The Navbar component and the Alert component of our application will always show up because they are not inside the switch statement. 
+                So they will be there for every single route.  
+            */}
       {/* Navbar Component of our react application */}
         
         {/* Serve/Use the custom NavBar Component here */}
@@ -110,30 +131,51 @@ function App() {
           <Alert alert={alert} />
 
 
-
-      
-      {/* TextForm Component of our react application */}
-        
         <div className="container my-3">
 
-          {/* Serve/Use the custom TextForm Component here */}
-          {/* We will use the TextForm component by writing <TextForm/> inside return(). */}
+          {/* Using Switch:
+                For this purpose, we are going to use the switch component (<switch></switch>). 
+                The switch component makes sure that only one route shows at any one time. 
+                All of our routes go inside this switch component. 
+          */}
+
+          <Switch>
+
+            {/* Using Route:
+                  Alright, we need to set up our individual routes for the different pages of our react applicatione. 
+                  So, we will create a route for each page, for which we will be using the route component(<route></route>). 
+            */}
+
+            <Route path="/about">
+
+               {/* About Component of our react application */}
+                {/* Using About component in our react app */}
+                <About/>
+
+            </Route>
+
+            <Route path="/">
+
+              {/* TextForm Component of our react application */}
+                {/* Serve/Use the custom TextForm Component here */}
+                  {/* We will use the TextForm component by writing <TextForm/> inside return(). */}
+                  
+                  {/* passing the values in the created props ==> I created one prop in my TextForm component (heading)*/}
+                  {/* Now I will also pass this state variable named "Mode" to our TextForm component using props, I added a new props name mode with value as state variable */}
+
+                {/* Show Alert message while using the features uisng props */}
+                <TextForm heading="Enter the text to analyse" mode={Mode} showAlert={showAlert} />
+
+            </Route>
+
+          </Switch>
           
-          {/* passing the values in the created props ==> I created one prop in my TextForm component (heading)*/}
-          {/* Now I will also pass this state variable named "Mode" to our TextForm component using props, I added a new props name mode with value as state variable */}
-
-          {/* Show Alert message while using the features uisng props */}
-          <TextForm heading="Enter the text to analyse" mode={Mode} showAlert={showAlert} />
-
         </div>
 
-       {/* About Component of our react application */}
-       {/* Using About component in our react app */}
-       <About/>
-        
+    </Router>
 
-      
-    </div>
+  </>
+
   );
 }
 

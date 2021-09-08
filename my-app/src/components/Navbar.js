@@ -10,6 +10,9 @@ import React from "react"
 // Firstly, we need to import prop types
 import PropTypes from 'prop-types'
 
+// using Link tag
+import { Link } from "react-router-dom";
+
 
 /*
     Changing Values Using Props:
@@ -49,12 +52,42 @@ export default function Navbar(props) {
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
 
                     <li className="nav-item">
-                        <a className="nav-link active" aria-current="page" href="/">Home</a>
+                        
+                        {/* react-router-dom */}
+                        {/* We should not use anchor tags becasue in that case, your application will be sending the 
+                            fresh request to the server each time, which we don’t want to happen as it will reload the page 
+                            each time, just as a normal application.
+
+                            So, what is the solution to this problem?
+                            Solution: Using "Link to" tag: 
+                                To overcome this issue of reloading the page each time, instead of an Anchor tag, 
+                                we will be using a special type of tag known as Link tag. 
+                                Let’s go to the navbar and try to use a Link tag instead of the anchor tag. 
+                        */}
+
+                        {/* <a className="nav-link active" aria-current="page" href="/">Home</a> */}
+                        <Link to= "/" className="nav-link" > Home </Link>
+
                     </li>
                     <li className="nav-item">
                         {/* Create props.aboutText */}
                         {/* We will be passing values in these props from App.js file */}
-                        <a className="nav-link" href="/"> {props.aboutText} </a>
+
+                        {/* react-router-dom */}
+                        {/* We should not use anchor tags becasue in that case, your application will be sending the 
+                            fresh request to the server each time, which we don’t want to happen as it will reload the page 
+                            each time, just as a normal application.
+
+                            So, what is the solution to this problem?
+                            Solution: Using "Link to" tag: 
+                                To overcome this issue of reloading the page each time, instead of an Anchor tag, 
+                                we will be using a special type of tag known as Link tag. 
+                                Let’s go to the navbar and try to use a Link tag instead of the anchor tag. 
+                        */}
+
+                        {/* <a className="nav-link" href="/"> {props.aboutText} </a> */}
+                        <Link to= "/about" className="nav-link" > {props.aboutText} </Link>
+                        
                     </li>
 
                     </ul>
