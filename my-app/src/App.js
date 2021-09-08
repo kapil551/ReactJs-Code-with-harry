@@ -64,6 +64,14 @@ function App() {
       type: type
     });
 
+    // set timeout for the alert messages ==> I want to automatically dismiss the alert messages after 2 seconds
+    setTimeout(() => {
+
+      // update the value of the state variable named "alert" to null
+      setalert(null);
+
+    }, 2000);
+
   }
 
 
