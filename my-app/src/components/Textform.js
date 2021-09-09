@@ -157,6 +157,16 @@ export default function Textform(props) {
     const timeToReadOneWord = 0.008;
     const minutesRead = timeToReadOneWord * countWords;
 
+    /*
+        Disable Button Issue:
+            When our Textbox is empty, but our buttons are working and performing their functions, which seems like a bug to our application, 
+
+            Solution: To overcome this issue, we would add the below code to every button. 
+
+            disabled={text.length===0} 
+            
+            This code means to disable the buttons when the length of the text is 0. That is, the textbox is empty.
+    */
 
     return (
         <>
@@ -179,20 +189,20 @@ export default function Textform(props) {
             {/* Now let’s make our button functional by assigning a function to it. 
                 We are creating a function named UpperCaseHandler, which will be invoked when the button is clicked
                 and this onClickHandler will change the text of the textbox to upperCase  */}
-            <button className="btn btn-primary" onClick={upperCaseHandler}> Convert to UpperCase</button>
+            <button className="btn btn-primary" onClick={upperCaseHandler} disabled={text.length === 0} > Convert to UpperCase</button>
 
             {/* Let’s create a convert to Lowercase Button for our app and assign a function to it. 
                 So that it can convert text to Lowercase. */}
-            <button className="btn btn-primary mx-2" onClick={lowerCaseHandler}> Convert to LowerCase</button>
+            <button className="btn btn-primary mx-2" onClick={lowerCaseHandler} disabled={text.length === 0} > Convert to LowerCase</button>
 
             {/* Let's create a trim all space Button for our app and also assign a fucntion to it.*/}
-            <button type="button" className="btn btn-secondary" onClick={trimSpacesHandler} >Trim spaces</button>
+            <button type="button" className="btn btn-secondary" onClick={trimSpacesHandler} disabled={text.length === 0} >Trim spaces</button>
 
             {/* Copy Text Button */}
-            <button type="button" className="btn btn-secondary mx-2" onClick={handleCopy}>Copy Text</button>
+            <button type="button" className="btn btn-secondary mx-2" onClick={handleCopy} disabled={text.length === 0} >Copy Text</button>
 
             {/* {Remove Extra Spaces button} */}
-            <button type="button" className="btn btn-secondary mx-2" onClick={removeExtraSpaceHandler}>Remove Extra Spaces</button>
+            <button type="button" className="btn btn-secondary mx-2" onClick={removeExtraSpaceHandler} disabled={text.length === 0} >Remove Extra Spaces</button>
             
 
 
