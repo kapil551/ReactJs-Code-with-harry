@@ -107,6 +107,9 @@ export default function Textform(props) {
 
         navigator.clipboard.writeText(copyText.value)
 
+        // deselect the text after copying to clipboard
+        document.getSelection().removeAllRanges();
+
         // Show Alert message while using the features
         props.showAlert("Copied to clipboard!", "success");
     }
