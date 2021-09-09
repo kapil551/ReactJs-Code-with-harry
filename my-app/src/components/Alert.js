@@ -20,15 +20,21 @@ export default function Alert(props) {
     
     return (
 
-         /* Logical && Operator:
-                If props.alert is null then the code written after && won’t be shown otherwise 
-                the code inside <div></div> tag will be displayed. 
-        */
+        <div style={{height: "3.5rem"}}>
 
-                                                    // change the color of the alert box as per type
-                                                    // e.g. green color for "success", red color for "warning"
-        props.alert && <div className={`alert alert-${props.alert.type} alert-dismissible fade show`} role="alert">
-            <strong> {capitalizeFirstCharacter(props.alert.type)} </strong>: {props.alert.msg}
+            {/* Logical && Operator:
+                If props.alert is null then the code written after && won’t be shown otherwise 
+                the code inside <div></div> tag will be displayed.  
+            */}
+        
+
+                                                    {/* change the color of the alert box as per type
+                                                        e.g. green color for "success", red color for "warning" */}
+            { props.alert && <div className={`alert alert-${props.alert.type} alert-dismissible fade show`} role="alert">
+                <strong> {capitalizeFirstCharacter(props.alert.type)} </strong>: {props.alert.msg}
+            </div> }
+
         </div>
+        
     )
 }
