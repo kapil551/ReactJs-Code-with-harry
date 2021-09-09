@@ -153,7 +153,7 @@ function App() {
 
                {/* About Component of our react application */}
                 {/* Using About component in our react app */}
-                <About/>
+                <About mode={Mode} />
 
             </Route>
 

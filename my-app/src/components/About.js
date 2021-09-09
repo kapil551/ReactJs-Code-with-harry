@@ -4,92 +4,17 @@
 
 import React, {useState} from 'react'
 
-export default function About() {
+                        // using props
+export default function About(props) {
 
-    // // Enble dark mode in about component
-    // let myStyle = {
-    //     color: "white",
-    //     backgroundColor: "black",
-    // }
+   let myStyle = {
+       color: props.mode === "light" ? "black" : "white",
+       backgroundColor: props.mode === "light" ? "white" : "#EC4899"
 
-    // let btnStyle = {
-    //     backgroundColor: "white",
-    //     color: "black"
-    // }
-
-    // Declare a new state variable, which we'll call "myStyle",
-    // And initially the value of myStyle is per light mode
-    const [myStyle, setMyStyle] = useState({
-
-        color: "black",
-        backgroundColor: "white"
-    });
-
-    // Declare another new state variable, which we'll call "btnStyle",
-    // And initially the value of btnStyle is per light mode
-    const [btnStyle, setBtnStyle] = useState({
-        backgroundColor: "black",
-        color: "white"
-    });
-
-    // Declare another new state variable, which we'll call "btnText",
-    // And initially the value of btnText is "Enable Dark Mode"
-    const [btnText, setBtnText] = useState("Enable Dark Mode");
-
-
-    // handler function to toggle b/w light and dark mode on button click
-    const toggleLightAndDarkModeHandler = () => {
-
-        console.log("Btn is clicked");
-
-        if( myStyle.backgroundColor === "white" && btnStyle.backgroundColor === "black") {
-
-            // enable dark mode
-
-            // update the value of myStyle
-            setMyStyle({
-                backgroundColor: "black",
-                color: "white",
-                border: "1px solid white"
-            });
-
-            // update the value of btnStyle
-            setBtnStyle({
-                backgroundColor: "white",
-                color: "black"
-            })
-
-            // update the value of btnText
-            setBtnText("Enable Light Mode ");
-
-        } 
-        
-        else {
-
-             // enable light mode
-
-            // update the value of myStyle
-             setMyStyle({
-                backgroundColor: "white",
-                color: "black"
-            });
-
-            // update the value of btnStyle
-            setBtnStyle({
-                backgroundColor: "black",
-                color: "white"
-            })
-
-             // update the value of btnText
-            setBtnText("Enable Dark Mode");
-
-        }
-    }
-
-    
+   }
 
     return (
-        <div className="container" style={myStyle}>
+        <div className="container" style={myStyle} >
 
             <h3>About Us</h3>
             
@@ -102,7 +27,7 @@ export default function About() {
                     </h2>
                     <div id="collapseOne" className="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                     <div className="accordion-body">
-                        <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classNamees that we use to style each element. These classNamees control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                        <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classNamees that we use to style each element. These classNamees control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the .accordion-body, though the transition does limit overflow.
                     </div>
                     </div>
                 </div>
@@ -114,7 +39,7 @@ export default function About() {
                     </h2>
                     <div id="collapseTwo" className="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                     <div className="accordion-body">
-                        <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classNamees that we use to style each element. These classNamees control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                        <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classNamees that we use to style each element. These classNamees control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the .accordion-body, though the transition does limit overflow.
                     </div>
                     </div>
                 </div>
@@ -126,14 +51,12 @@ export default function About() {
                     </h2>
                     <div id="collapseThree" className="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                     <div className="accordion-body">
-                        <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classNamees that we use to style each element. These classNamees control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                        <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classNamees that we use to style each element. These classNamees control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the .accordion-body, though the transition does limit overflow.
                     </div>
                     </div>
                 </div>
             </div>
-
-            {/* Now I want to toggle b/w the dark mode and light mode in the about component by clicking on the button */}
-            <button type="button" className="btn my-2" onClick={toggleLightAndDarkModeHandler} style={btnStyle}> {btnText} </button>
+ 
         </div>
     )
 }
