@@ -146,7 +146,27 @@ export default function Textform(props) {
         The quick way of fixing this error is by removing the empty strings from the split array. 
         We can easily do so by using the filter method in our Text.split function as described below:
     */
-    const countWords = text.split(" ").filter((element) => {
+
+    /*
+    Fixing Word Count Issue in different new lines:
+        
+        This 
+        is 
+        my
+        textbox.
+
+        We have typed four words in the textbox but still, the word count is showing it as one. 
+        This issue occurs as we have forgotten to split the string with a new line. 
+        We would like to split it by space and a new line.
+
+        Solution:
+        text.split(/\s+/).filter((element)=>{return element.length!==0}).length}
+        
+        Here, We are using the regular expression(regex) instead of space. 
+        The \s is the common shorthand in regex for any whitespace character, including newlines and ‘+’ denotes more than one.
+
+     */
+    const countWords = text.split(/\s+/).filter((element) => {
 
         return element.length !== 0; // returne true only if the element has length greater than zero
     }).length;
